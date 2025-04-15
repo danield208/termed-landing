@@ -1,0 +1,7 @@
+{
+  "name": "termed-landing",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
