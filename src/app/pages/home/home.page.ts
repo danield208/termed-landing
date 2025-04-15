@@ -8,6 +8,10 @@ import {
   IonCardHeader,
   IonCardTitle,
   IonCardContent,
+  IonRow,
+  IonCol,
+  IonButton,
+  IonList,
 } from '@ionic/angular/standalone';
 
 @Component({
@@ -15,6 +19,10 @@ import {
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
   imports: [
+    IonList,
+    IonButton,
+    IonCol,
+    IonRow,
     IonCardContent,
     IonCardTitle,
     IonCardHeader,

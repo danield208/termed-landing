@@ -1,1 +1,13 @@
-
+section {
+  &.bgp {
+    background-image: linear-gradient(
+        to right,
+        rgb(255, 255, 255),
+        rgba(200, 200, 200, 0.8)
+      ),
+      url("../../../assets/background/TerMed_Header_Startseite.png");
+    background-size: cover;
+    background-position: center;
+    text-align: left;
+  }
+}

@@ -10,8 +10,6 @@ import {
   IonMenu,
   IonButtons,
   IonImg,
-  IonNav,
-  IonNavLink,
   IonButton,
   IonRippleEffect,
 } from '@ionic/angular/standalone';

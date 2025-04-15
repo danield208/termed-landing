@@ -1,27 +1,58 @@
 <ion-content [fullscreen]="true">
-  <section class="main-max-width ion-padding">
-    <div>
-      <h1>Gesundheit neu definiert.</h1>
-      <h1>Alles in einer Anwendung.</h1>
+  <section class="bgp ion-padding">
+    <div class="content-layout">
+      <div>
+        <h1>Gesundheit neu definiert.</h1>
+        <h1>Alles in einer Anwendung.</h1>
 
-      <p>Einfache Online-Terminbuchung, ortsunabhängige Videosprechstunden und Entlastung der Arztpraxen durch Übernahme
-        der Patientenanrufe. Ideal für Patienten, die schnell und unkompliziert den passenden Arzt finden möchten, sowie
-        für Ärzte, die Ihre Praxis digital ausrichten und dabei ihr Praxisteam entlasten wollen.</p>
+        <p>Einfache Online-Terminbuchung, ortsunabhängige Videosprechstunden und Entlastung der Arztpraxen durch
+          Übernahme
+          der Patientenanrufe. Ideal für Patienten, die schnell und unkompliziert den passenden Arzt finden möchten,
+          sowie
+          für Ärzte, die Ihre Praxis digital ausrichten und dabei ihr Praxisteam entlasten wollen.</p>
+      </div>
+
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title>
+            Arzt Finden
+          </ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content>
+          <ion-item>
+            <ion-icon class="md icon-large hydrated" name="bag-add-outline" size="large"></ion-icon>
+            <ion-searchbar showClearButton="focus" placeholder="Suche nach Namen"></ion-searchbar>
+          </ion-item>
+
+          <ion-list lines="none">
+            <ion-item>
+              <h6>Fachrichtung</h6>
+            </ion-item>
+
+            <ion-item>
+              <ion-col>
+                <ion-row>
+                  <ion-col>Placeholder</ion-col>
+                  <ion-col>Placeholder</ion-col>
+                  <ion-col>Placeholder</ion-col>
+                  <ion-col>Placeholder</ion-col>
+                </ion-row>
+              </ion-col>
+            </ion-item>
+
+            <ion-item>
+              <ion-button fill="outline" color="secondary">
+                Alle Anzeigen
+                <ion-icon slot="start" name="menu-outline"></ion-icon>
+              </ion-button>
+            </ion-item>
+          </ion-list>
+        </ion-card-content>
+      </ion-card>
     </div>
 
-    <ion-card>
-      <ion-card-header>
-        <ion-card-title>
-          Arzt Finden
-        </ion-card-title>
-      </ion-card-header>
-
-      <ion-card-content>
-        <ion-item>
-          <ion-icon class="md icon-large hydrated" name="bag-add-outline" size="large" role="img"></ion-icon>
-          <ion-searchbar showClearButton="focus" placeholder="Suche nach Namen"></ion-searchbar>
-        </ion-item>
-      </ion-card-content>
-    </ion-card>
   </section>
+
+
 </ion-content>
