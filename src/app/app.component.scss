@@ -1,3 +1,33 @@
 ion-img {
   width: 150px;
+
+  cursor: pointer;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  gap: 20px;
+}
+
+.ripple-parent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+  overflow: hidden;
+
+  user-select: none;
+
+  color: black;
+  text-decoration: none;
+}
+
+.rounded-rectangle {
+  width: 120px;
+  height: 48px;
+  border-radius: 10px;
 }

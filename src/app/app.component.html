@@ -32,9 +32,31 @@
           <ion-menu-button></ion-menu-button>
         </ion-buttons>
 
-        <ion-img src="../assets/Logo_00_Termed_Logo_Blau.png"></ion-img>
+        <ion-img routerLink="/" slot="start" src="../assets/Logo_00_Termed_Logo_Blau.png"></ion-img>
 
-        <ion-nav></ion-nav>
+        <nav>
+          <a routerLink="/products" class="ion-activatable ripple-parent rounded-rectangle">
+            Produkte
+            <ion-ripple-effect></ion-ripple-effect>
+          </a>
+          <a routerLink="/about" class="ion-activatable ripple-parent rounded-rectangle">
+            Über uns
+            <ion-ripple-effect></ion-ripple-effect>
+          </a>
+          <a routerLink="/career" class="ion-activatable ripple-parent rounded-rectangle">
+            Karriere
+            <ion-ripple-effect></ion-ripple-effect>
+          </a>
+          <a routerLink="/kontact" class="ion-activatable ripple-parent rounded-rectangle">
+            Kontakt
+            <ion-ripple-effect></ion-ripple-effect>
+          </a>
+        </nav>
+
+        <ion-buttons slot="end">
+          <ion-button>Patient</ion-button>
+          <ion-button>Praxis</ion-button>
+        </ion-buttons>
       </ion-toolbar>
     </ion-header>
 
