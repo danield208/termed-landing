@@ -12,13 +12,21 @@ import {
   IonCol,
   IonButton,
   IonList,
+  IonImg,
 } from '@ionic/angular/standalone';
+import { addIcons } from 'ionicons';
+import {
+  bagAddOutline,
+  menuOutline,
+  chevronForwardOutline,
+} from 'ionicons/icons';
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
   imports: [
+    IonImg,
     IonList,
     IonButton,
     IonCol,
@@ -34,5 +42,7 @@ import {
   ],
 })
 export class HomePage {
-  constructor() {}
+  constructor() {
+    addIcons({ bagAddOutline, menuOutline, chevronForwardOutline });
+  }
 }

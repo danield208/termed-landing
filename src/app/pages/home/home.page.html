@@ -2,10 +2,11 @@
   <section class="bgp ion-padding">
     <div class="content-layout">
       <div>
-        <h1>Gesundheit neu definiert.</h1>
-        <h1>Alles in einer Anwendung.</h1>
+        <h1 class="blue-text">Gesundheit neu definiert.</h1>
+        <h1 class="green-text">Alles in einer Anwendung.</h1>
 
-        <p>Einfache Online-Terminbuchung, ortsunabhängige Videosprechstunden und Entlastung der Arztpraxen durch
+        <p class="blue-text">Einfache Online-Terminbuchung, ortsunabhängige Videosprechstunden und Entlastung der
+          Arztpraxen durch
           Übernahme
           der Patientenanrufe. Ideal für Patienten, die schnell und unkompliziert den passenden Arzt finden möchten,
           sowie
@@ -14,15 +15,15 @@
 
       <ion-card>
         <ion-card-header>
-          <ion-card-title>
+          <ion-card-title class="blue-text">
             Arzt Finden
           </ion-card-title>
         </ion-card-header>
 
         <ion-card-content>
-          <ion-item>
+          <ion-item lines="none">
             <ion-icon class="md icon-large hydrated" name="bag-add-outline" size="large"></ion-icon>
-            <ion-searchbar showClearButton="focus" placeholder="Suche nach Namen"></ion-searchbar>
+            <ion-searchbar searchIcon="none" showClearButton="focus" placeholder="Suche nach Namen"></ion-searchbar>
           </ion-item>
 
           <ion-list lines="none">
@@ -48,11 +49,62 @@
               </ion-button>
             </ion-item>
           </ion-list>
+
+
         </ion-card-content>
       </ion-card>
+
+      <div class="info-boxes-container">
+        <ion-row>
+          <ion-col>
+            <ion-card class="blue-text">
+              <ion-card-header>
+                <ion-img src="../../../assets/info-boxes/Connect_Icon.ico"></ion-img>
+                <ion-card-title>TerMed Hotline</ion-card-title>
+              </ion-card-header>
+              <ion-card-content>
+                <p>Unsere geschulten MFAs unterstützen Praxen durch die Übernahme der Patientenanrufe. Ihre MFAs
+                  haben so mehr Zeit für die Patienten vor Ort.</p>
+                <ion-button fill="clear">
+                  <ion-icon name="chevron-forward-outline"></ion-icon>
+                </ion-button>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+
+          <ion-col>
+            <ion-card class="blue-text">
+              <ion-card-header>
+                <ion-img src="../../../assets/info-boxes/Access_Icon.ico"></ion-img>
+                <ion-card-title>VIOMEDI</ion-card-title>
+              </ion-card-header>
+              <ion-card-content>
+                <p>Ermöglicht Patienten direkten und persönlichen Kontakt zu Ärzten über sichere Videoverbindungen.
+                </p>
+                <ion-button fill="clear">
+                  <ion-icon name="chevron-forward-outline"></ion-icon>
+                </ion-button>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+
+          <ion-col>
+            <ion-card class="blue-text">
+              <ion-card-header>
+                <ion-img src="../../../assets/info-boxes/Reserve_Icon.ico"></ion-img>
+                <ion-card-title>TerMed Termine</ion-card-title>
+              </ion-card-header>
+              <ion-card-content>
+                <p>Arzttermine bequem und schnell online vereinbaren – jederzeit und überall. Ideal für Patienten,
+                  mehr Effizienz für Praxen.</p>
+                <ion-button fill="clear">
+                  <ion-icon name="chevron-forward-outline"></ion-icon>
+                </ion-button>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </div>
     </div>
-
   </section>
-
-
 </ion-content>
