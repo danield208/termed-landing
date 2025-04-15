@@ -6,12 +6,33 @@ ion-img {
   }
 }
 
-nav {
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+
   display: flex;
-  justify-content: center;
   align-items: center;
-  margin: auto;
-  gap: 20px;
+
+  nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    gap: 20px;
+  }
+
+  .left {
+    display: flex;
+    align-items: center;
+  }
+
+  @media only screen and (max-width: 900px) {
+    nav {
+      display: none;
+    }
+
+    justify-content: space-between;
+  }
 }
 
 .ripple-parent {
