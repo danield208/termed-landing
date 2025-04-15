@@ -1,3 +1,45 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <!-- MENU -->
+  <ion-menu contentId="main-content">
+    <ion-header>
+      <ion-toolbar>
+        <ion-img src="../assets/Logo_00_Termed_Logo_Blau.png"></ion-img>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding">
+      <p>Suche</p>
+      <p>Anmeldung</p>
+      <br>
+      <p>Meine Medikamente</p>
+      <p>Faq</p>
+      <p>Kontakt</p>
+      <p>Über uns</p>
+      <br>
+      <p>Sprache</p>
+      <p>Impressum</p>
+      <p>Datenschutz
+      </p>
+      <p>AGB</p>
+      <p>Version</p>
+    </ion-content>
+  </ion-menu>
+  <!-- MENU -->
+
+  <div class="ion-page" id="main-content">
+    <ion-header>
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+
+        <ion-img src="../assets/Logo_00_Termed_Logo_Blau.png"></ion-img>
+
+        <ion-nav></ion-nav>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content>
+      <ion-router-outlet></ion-router-outlet>
+    </ion-content>
+  </div>
 </ion-app>
