@@ -1,9 +1,6 @@
 import { Component } from '@angular/core';
 import {
   IonContent,
-  IonText,
-  IonGrid,
-  IonRow,
   IonCard,
   IonItem,
   IonIcon,
@@ -24,9 +21,6 @@ import {
     IonSearchbar,
     IonIcon,
     IonItem,
-    IonRow,
-    IonGrid,
-    IonText,
     IonContent,
     IonCard,
   ],

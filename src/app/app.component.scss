@@ -1,7 +1,9 @@
 ion-img {
   width: 150px;
 
-  cursor: pointer;
+  &.pointer {
+    cursor: pointer;
+  }
 }
 
 nav {

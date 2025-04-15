@@ -23,8 +23,6 @@ import {
     IonRippleEffect,
     IonButton,
     RouterLink,
-    IonNavLink,
-    IonNav,
     IonImg,
     IonApp,
     IonRouterOutlet,
