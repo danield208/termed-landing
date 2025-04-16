@@ -172,6 +172,9 @@ export class HomePage {
     this.filteredSpecialties.set(specialties);
   }
 
+  /**
+   * Create Array with new object to list specialties in alphabetical groups
+   */
   private mapSpecialties(specialties: Specialty[]): SpecialtyAlphabetical[] {
     console.log('letseGo');
     const sortedArray = specialties.reduce(
@@ -189,7 +192,19 @@ export class HomePage {
           }
         });
 
-        return prevArray;
+        const finalSortedArray = prevArray.sort((a, b) => {
+          if (a.letter < b.letter) {
+            return -1;
+          }
+
+          if (a.letter > b.letter) {
+            return 1;
+          }
+
+          return 0;
+        });
+
+        return finalSortedArray;
       },
       []
     );
