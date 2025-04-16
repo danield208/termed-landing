@@ -12,6 +12,12 @@ section {
   }
 }
 
+ion-searchbar::ng-deep {
+  ion-icon {
+    display: none;
+  }
+}
+
 ion-card-title {
   &.bold {
     font-size: 35px;
@@ -31,7 +37,7 @@ ion-button {
     --padding-end: 15px;
   }
 
-  &.specialty {
+  &.query-button {
     --background: #e1ecff;
     --border-radius: 15px;
     --padding-start: 16px;

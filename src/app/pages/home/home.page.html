@@ -23,9 +23,25 @@
         <ion-card-content>
           <ion-item lines="none">
             <ion-icon class="md icon-large hydrated" name="bag-add-outline" size="large"></ion-icon>
-            <ion-searchbar searchIcon="none" showClearButton="focus" placeholder="Suche nach Namen"></ion-searchbar>
+            <ion-searchbar [debounce]="225" (ionInput)="handleSearchInput($event)" showClearButton="focus"
+              placeholder="Suche nach Namen"></ion-searchbar>
           </ion-item>
 
+          <!-- Doctors -->
+          @for (result of searchResults(); track result) {
+          <ion-col>
+            <ion-row>
+              <ion-col>
+                <ion-button class="query-button" fill="clear">{{result.anr + " " + result.title + " " + result.name + "
+                  "
+                  + result.surname}}</ion-button>
+              </ion-col>
+            </ion-row>
+          </ion-col>
+          }
+
+
+          <!-- Specialty -->
           <ion-list lines="none">
             <ion-item>
               <h6>Fachrichtung</h6>
@@ -35,19 +51,20 @@
               <ion-col>
                 <ion-row>
                   <ion-col>
-                    <ion-button class="specialty" fill="clear">Allgemeinmedizin</ion-button>
+                    <ion-button class="query-button" fill="clear">Allgemeinmedizin</ion-button>
                   </ion-col>
                   <ion-col>
-                    <ion-button class="specialty" fill="clear">Frauenheilkunde und Geburtenhilfe</ion-button>
+                    <ion-button class="query-button" fill="clear">Frauenheilkunde und Geburtenhilfe</ion-button>
                   </ion-col>
                   <ion-col>
-                    <ion-button class="specialty" fill="clear">Hals-Nasen-Ohrenheilkunde</ion-button>
+                    <ion-button class="query-button" fill="clear">Hals-Nasen-Ohrenheilkunde</ion-button>
                   </ion-col>
                   <ion-col>
-                    <ion-button class="specialty" fill="clear">Kinderheilkunde / Kinder- und Jugendmedizin</ion-button>
+                    <ion-button class="query-button" fill="clear">Kinderheilkunde / Kinder- und
+                      Jugendmedizin</ion-button>
                   </ion-col>
                   <ion-col>
-                    <ion-button class="specialty" fill="clear">Orthopädie und Unfallchirugie</ion-button>
+                    <ion-button class="query-button" fill="clear">Orthopädie und Unfallchirugie</ion-button>
                   </ion-col>
                 </ion-row>
               </ion-col>

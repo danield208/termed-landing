@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import {
   IonContent,
   IonCard,
@@ -16,7 +16,6 @@ import {
   IonModal,
   IonHeader,
   IonToolbar,
-  IonTitle,
   IonButtons,
 } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
@@ -26,6 +25,8 @@ import {
   chevronForwardOutline,
   arrowBackOutline,
 } from 'ionicons/icons';
+import { environment } from 'src/environments/environment.prod';
+import { Doctor } from 'src/types/doctor.type';
 
 @Component({
   selector: 'app-home',
@@ -33,7 +34,6 @@ import {
   styleUrls: ['home.page.scss'],
   imports: [
     IonButtons,
-    IonTitle,
     IonToolbar,
     IonHeader,
     IonModal,
@@ -54,6 +54,7 @@ import {
 })
 export class HomePage {
   public isModalOpen = false;
+  public searchResults = signal<Doctor[]>([]);
 
   constructor() {
     addIcons({
@@ -66,5 +67,30 @@ export class HomePage {
 
   public setOpen(state: boolean): void {
     this.isModalOpen = state;
+  }
+
+  public async handleSearchInput(event: Event): Promise<void> {
+    const target = event.target as HTMLIonSearchbarElement;
+    if (!target.value) {
+      this.searchResults.set([]);
+      return;
+    }
+
+    const searchTerm = target.value?.toLocaleLowerCase() || '';
+
+    try {
+      const res = await fetch(
+        `${environment.apiUrl}/public/search/doc/${searchTerm}`
+      );
+
+      if (!res.ok) {
+        throw new Error(`res status: ${res.status}`);
+      }
+
+      const json = await res.json();
+      this.searchResults.set(json);
+    } catch (error) {
+      console.log(error);
+    }
   }
 }
