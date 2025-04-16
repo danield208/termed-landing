@@ -49,7 +49,7 @@
             </ion-item>
 
             <ion-item>
-              @for (result of searchResultsSpecs(); track result.id) {
+              @for (result of filteredSpecialties(); track result.id) {
               <ion-col>
                 <ion-row>
                   <ion-col>
@@ -58,7 +58,6 @@
                 </ion-row>
               </ion-col>
               }
-
             </ion-item>
 
             <ion-item>
@@ -140,9 +139,25 @@
         </ion-toolbar>
       </ion-header>
 
-      <ion-content class="ion-padding">
-        <h1>Fachrichtungen</h1>
-      </ion-content>
+      <ion-card>
+        <ion-card-header>
+          <h2>Fachrichtungen</h2>
+        </ion-card-header>
+        <ion-card-content>
+          @for(alphaItem of specialtiesSortedAlpha(); track alphaItem.letter ) {
+          <ion-col>
+            <h6>{{alphaItem.letter}}</h6>
+            <ion-row>
+              @for(specItem of alphaItem.specialties; track specItem.id) {
+              <ion-col>
+                <ion-button fill="clear">{{specItem.title}}</ion-button>
+              </ion-col>
+              }
+            </ion-row>
+          </ion-col>
+          }
+        </ion-card-content>
+      </ion-card>
     </ng-template>
   </ion-modal>
 </ion-content>
