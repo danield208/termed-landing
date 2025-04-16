@@ -11,6 +11,7 @@ export const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full',
   },
+  // Those are all placeholders for now
   {
     path: 'products',
     loadComponent: () =>

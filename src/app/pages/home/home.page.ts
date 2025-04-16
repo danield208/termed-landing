@@ -71,10 +71,19 @@ export class HomePage {
     this.setSpecDefault();
   }
 
+  /**
+   * Opens a modal to show all available specialties
+   * @param state Boolean from ionic clicked Component
+   */
   public setOpen(state: boolean): void {
     this.isModalOpen = state;
   }
 
+  /**
+   * Executed after a set amount of time if user is searching
+   * @param event Ionic input event from searchbar
+   * @returns void
+   */
   public handleSearchInput(event: Event): void {
     const target = event.target as HTMLIonSearchbarElement;
     if (!target.value) {
@@ -89,6 +98,10 @@ export class HomePage {
     this.filterSpecialty(searchTerm);
   }
 
+  /**
+   * Filter doctors by their names
+   * @param term search term provided by caller function
+   */
   private async filterDocs(term: string): Promise<void> {
     try {
       const res = await fetch(
@@ -106,6 +119,10 @@ export class HomePage {
     }
   }
 
+  /**
+   * Filter specialties by their titles
+   * @param term search term provided by caller function
+   */
   private async filterSpecialty(term: string): Promise<void> {
     try {
       const res = await fetch(
@@ -123,6 +140,9 @@ export class HomePage {
     }
   }
 
+  /**
+   * Set default - first 5 - specialties for default display
+   */
   private async setSpecDefault(): Promise<void> {
     try {
       const res = await fetch(`${environment.apiUrl}/public/firstspecial`);
