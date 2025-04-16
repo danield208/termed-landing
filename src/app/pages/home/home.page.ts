@@ -13,12 +13,18 @@ import {
   IonButton,
   IonList,
   IonImg,
+  IonModal,
+  IonHeader,
+  IonToolbar,
+  IonTitle,
+  IonButtons,
 } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
 import {
   bagAddOutline,
   menuOutline,
   chevronForwardOutline,
+  arrowBackOutline,
 } from 'ionicons/icons';
 
 @Component({
@@ -26,6 +32,11 @@ import {
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
   imports: [
+    IonButtons,
+    IonTitle,
+    IonToolbar,
+    IonHeader,
+    IonModal,
     IonImg,
     IonList,
     IonButton,
@@ -42,7 +53,18 @@ import {
   ],
 })
 export class HomePage {
+  public isModalOpen = false;
+
   constructor() {
-    addIcons({ bagAddOutline, menuOutline, chevronForwardOutline });
+    addIcons({
+      bagAddOutline,
+      menuOutline,
+      chevronForwardOutline,
+      arrowBackOutline,
+    });
+  }
+
+  public setOpen(state: boolean): void {
+    this.isModalOpen = state;
   }
 }

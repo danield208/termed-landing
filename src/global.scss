@@ -25,6 +25,10 @@
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
 
+:root {
+  --main-blue: #003578;
+}
+
 /**
  * Ionic Dark Mode
  * -----------------------------------------------------
@@ -46,7 +50,7 @@
 }
 
 .blue-text {
-  color: #003578;
+  color: var(--main-blue);
 }
 
 .green-text {

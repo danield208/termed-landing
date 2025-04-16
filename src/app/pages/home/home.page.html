@@ -15,7 +15,7 @@
 
       <ion-card>
         <ion-card-header>
-          <ion-card-title class="blue-text">
+          <ion-card-title class="blue-text bold title-margin">
             Arzt Finden
           </ion-card-title>
         </ion-card-header>
@@ -34,16 +34,27 @@
             <ion-item>
               <ion-col>
                 <ion-row>
-                  <ion-col>Placeholder</ion-col>
-                  <ion-col>Placeholder</ion-col>
-                  <ion-col>Placeholder</ion-col>
-                  <ion-col>Placeholder</ion-col>
+                  <ion-col>
+                    <ion-button class="specialty" fill="clear">Allgemeinmedizin</ion-button>
+                  </ion-col>
+                  <ion-col>
+                    <ion-button class="specialty" fill="clear">Frauenheilkunde und Geburtenhilfe</ion-button>
+                  </ion-col>
+                  <ion-col>
+                    <ion-button class="specialty" fill="clear">Hals-Nasen-Ohrenheilkunde</ion-button>
+                  </ion-col>
+                  <ion-col>
+                    <ion-button class="specialty" fill="clear">Kinderheilkunde / Kinder- und Jugendmedizin</ion-button>
+                  </ion-col>
+                  <ion-col>
+                    <ion-button class="specialty" fill="clear">Orthopädie und Unfallchirugie</ion-button>
+                  </ion-col>
                 </ion-row>
               </ion-col>
             </ion-item>
 
             <ion-item>
-              <ion-button fill="outline" color="secondary">
+              <ion-button expand="block" (click)="setOpen(true)" class="show-all" fill="outline" color="secondary">
                 Alle Anzeigen
                 <ion-icon slot="start" name="menu-outline"></ion-icon>
               </ion-button>
@@ -107,4 +118,23 @@
       </div>
     </div>
   </section>
+
+  <!-- MODAL - "Show All" -->
+  <ion-modal [isOpen]="isModalOpen">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-buttons slot="start">
+            <ion-button (click)="setOpen(false)">Suchen
+              <ion-icon slot="start" name="arrow-back-outline"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+
+      <ion-content class="ion-padding">
+        <h1>Fachrichtungen</h1>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
 </ion-content>
