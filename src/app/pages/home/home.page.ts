@@ -27,6 +27,7 @@ import {
 } from 'ionicons/icons';
 import { environment } from 'src/environments/environment.prod';
 import { Doctor } from 'src/types/doctor.type';
+import { specialty } from 'src/types/specialty.type';
 
 @Component({
   selector: 'app-home',
@@ -54,7 +55,8 @@ import { Doctor } from 'src/types/doctor.type';
 })
 export class HomePage {
   public isModalOpen = false;
-  public searchResults = signal<Doctor[]>([]);
+  public searchResultsDocs = signal<Doctor[]>([]);
+  public searchResultsSpecs = signal<specialty[]>([]);
 
   constructor() {
     addIcons({
@@ -65,22 +67,32 @@ export class HomePage {
     });
   }
 
+  public ngOnInit() {
+    this.setSpecDefault();
+  }
+
   public setOpen(state: boolean): void {
     this.isModalOpen = state;
   }
 
-  public async handleSearchInput(event: Event): Promise<void> {
+  public handleSearchInput(event: Event): void {
     const target = event.target as HTMLIonSearchbarElement;
     if (!target.value) {
-      this.searchResults.set([]);
+      this.searchResultsDocs.set([]);
+      this.setSpecDefault();
       return;
     }
 
     const searchTerm = target.value?.toLocaleLowerCase() || '';
 
+    this.filterDocs(searchTerm);
+    this.filterSpecialty(searchTerm);
+  }
+
+  private async filterDocs(term: string): Promise<void> {
     try {
       const res = await fetch(
-        `${environment.apiUrl}/public/search/doc/${searchTerm}`
+        `${environment.apiUrl}/public/search/doc/${term}`
       );
 
       if (!res.ok) {
@@ -88,7 +100,39 @@ export class HomePage {
       }
 
       const json = await res.json();
-      this.searchResults.set(json);
+      this.searchResultsDocs.set(json);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  private async filterSpecialty(term: string): Promise<void> {
+    try {
+      const res = await fetch(
+        `${environment.apiUrl}/public/search/special/${term}`
+      );
+
+      if (!res.ok) {
+        throw new Error(`res status: ${res.status}`);
+      }
+
+      const json = await res.json();
+      this.searchResultsSpecs.set(json);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  private async setSpecDefault(): Promise<void> {
+    try {
+      const res = await fetch(`${environment.apiUrl}/public/firstspecial`);
+
+      if (!res.ok) {
+        throw new Error(`res status: ${res.status}`);
+      }
+
+      const json = await res.json();
+      this.searchResultsSpecs.set(json);
     } catch (error) {
       console.log(error);
     }

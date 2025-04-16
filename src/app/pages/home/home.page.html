@@ -28,7 +28,7 @@
           </ion-item>
 
           <!-- Doctors -->
-          @for (result of searchResults(); track result) {
+          @for (result of searchResultsDocs(); track result.id) {
           <ion-col>
             <ion-row>
               <ion-col>
@@ -48,26 +48,16 @@
             </ion-item>
 
             <ion-item>
+              @for (result of searchResultsSpecs(); track result.id) {
               <ion-col>
                 <ion-row>
                   <ion-col>
-                    <ion-button class="query-button" fill="clear">Allgemeinmedizin</ion-button>
-                  </ion-col>
-                  <ion-col>
-                    <ion-button class="query-button" fill="clear">Frauenheilkunde und Geburtenhilfe</ion-button>
-                  </ion-col>
-                  <ion-col>
-                    <ion-button class="query-button" fill="clear">Hals-Nasen-Ohrenheilkunde</ion-button>
-                  </ion-col>
-                  <ion-col>
-                    <ion-button class="query-button" fill="clear">Kinderheilkunde / Kinder- und
-                      Jugendmedizin</ion-button>
-                  </ion-col>
-                  <ion-col>
-                    <ion-button class="query-button" fill="clear">Orthopädie und Unfallchirugie</ion-button>
+                    <ion-button class="query-button" fill="clear">{{result.title}}</ion-button>
                   </ion-col>
                 </ion-row>
               </ion-col>
+              }
+
             </ion-item>
 
             <ion-item>
