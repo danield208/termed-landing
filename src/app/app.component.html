@@ -56,10 +56,21 @@
             </a>
           </nav>
 
-          <ion-buttons>
-            <ion-button>Patient</ion-button>
-            <ion-button>Praxis</ion-button>
-          </ion-buttons>
+          <div class="buttons">
+            <a routerLink="/patient">
+              <ion-button color="secondary">
+                Patient
+                <ion-icon slot="start" name="person-circle-outline"></ion-icon>
+              </ion-button>
+            </a>
+
+            <a href="https://doc.termed.de/" target="_blank">
+              <ion-button color="secondary">
+                Praxis
+                <ion-icon slot="start" name="medkit-outline"></ion-icon>
+              </ion-button>
+            </a>
+          </div>
         </div>
       </ion-toolbar>
     </ion-header>

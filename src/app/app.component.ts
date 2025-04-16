@@ -12,12 +12,16 @@ import {
   IonImg,
   IonButton,
   IonRippleEffect,
+  IonIcon,
 } from '@ionic/angular/standalone';
+import { addIcons } from 'ionicons';
+import { medkitOutline, personCircleOutline } from 'ionicons/icons';
 
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
   imports: [
+    IonIcon,
     IonRippleEffect,
     IonButton,
     RouterLink,
@@ -34,5 +38,10 @@ import {
   styleUrl: 'app.component.scss',
 })
 export class AppComponent {
-  constructor() {}
+  constructor() {
+    addIcons({
+      personCircleOutline,
+      medkitOutline,
+    });
+  }
 }

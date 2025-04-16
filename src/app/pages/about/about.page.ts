@@ -9,6 +9,4 @@ import { IonContent } from '@ionic/angular/standalone';
     <p>Über uns</p>
   </ion-content>`,
 })
-export class AboutPage {
-  constructor() {}
-}
+export class AboutPage {}
